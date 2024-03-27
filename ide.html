@@ -3,30 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wick Interpreter</title>
-    <link rel="stylesheet" href="stylesheet.css">
+    <title>WICK</title>
+    
+    <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
-
-<header>
-    <h1><center>WICK INTERPRETER</center></h1>
-    <button type="button" id="runButton">RUN</button>
-    <h3 id="projectTitle">the happy hour</h3>
-</header>
-
-<main>
-    <div id="editor-container"> 
-    <center>
-        <textarea id="code-editor" rows="20" cols="80"></textarea>
-        <textarea id="output" rows="20" cols="80" readonly></textarea>
-    </center>
+    <div class="container">
+        <h1>WICK</h1>
+        <div class="terminal" id="terminal">
+            <div>Enter your code</div>
+            <div id="command-line">&gt; <input type="text" id="input"></div>
+        </div>
+        <div class="editor-container">
+            <textarea id="code-editor" rows="20" cols="80"></textarea>
+        </div>
+        <button id="compile-button">Compile</button>
+        <div id="output-panel">
+        </div>
+    </div>
+    <div class="footer">
+        <p>Evelin, Lisset, Braden, Evan</p>
     </div>
 
-</main>
-    <script type="text/javascript" src="main.js"></script>
-<footer>
-    <h3><center>Braden, Evan, Evelin, Lisset </center></h3>
-</footer>
-
+    <script src="script.js" defer></script>
 </body>
 </html>
