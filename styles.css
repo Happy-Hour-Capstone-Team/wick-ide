@@ -1,31 +1,111 @@
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+header{
+    /*padding-bottom: 25px 0;*/
+    background-color: rgb(186, 190, 186);
+    width: 100%;
+    padding: 3px 0;
+    margin: 0;
+    font-family: "Comixo";
+    color:rgb(80, 84, 80);
+    letter-spacing: .5px;
+
 }
 
-.terminal {
-    background-color: black;
-    color: rgb(48, 200, 221);
-    font-family: monospace;
-    padding: 10px;
-    height: 300px;
-    overflow-y: scroll;
+body{
+    background-color: rgb(138, 149, 138);
+    margin: 0;
+    padding: 0;
+    width: 100%
 }
 
-#input-line {
-    display: flex;
+main {
+    margin: 20px auto;
+    width: 70%;
+    width: 100%
 }
 
-#input {
-    flex-grow: 1;
+/*#inputArea{
+    width: 100%;
+    height: 600px;
+    margin: 30px auto;
+}*/
+#inputField{
+    width: 100%;
+    height: 600px;
+    margin: 30px auto;
+    background-color: rgb(236, 238, 236);
+    border-color: rgb(236, 238, 236);
+    text-indent: 0;
+}
+
+/*#code-editor {
+    width: 80%;
+    height: 510px;
+    margin: 30px auto;
+    background-color: rgb(236, 238, 236);
+    border-color: rgb(236, 238, 236);
+    text-indent: 0;
+}
+#output {
+    width: 80%;
+    height: 200px;
+    margin: 30px auto;
+    background-color: rgb(236, 238, 236);
+    border-color: rgb(236, 238, 236);
+}*/
+#code-editor {
+    width: 80%;
+    height: 420px;
+    margin: 15px auto 0 auto; /* Reduced top margin to 15px */
+    background-color: rgb(236, 238, 236);
+    border-color: rgb(236, 238, 236);
+    text-indent: 0;
+}
+
+#output {
+    width: 80%;
+    height: 150px;
+    margin: 0 auto; /* Removed margin */
+    background-color: rgb(236, 238, 236);
+    border-color: rgb(236, 238, 236);
+}
+
+footer{
+    position: fixed;
+    width: 100%;
+    padding: 25px 0;
+    background-color: rgb(186, 190, 186);
+    color:rgb(80, 84, 80);
+    text-align: center;
+    font-family: "Comixo";
+    letter-spacing: 1px;
+}
+#runButton{
+    background-color: rgb(131, 132, 131);
     border: none;
-    background: transparent;
-    color: rgb(0, 0, 0);
-    font-family: monospace;
-    outline: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 0px;
+    position: absolute; 
+    right: 220px; 
+    top: 85px; 
+    font-family: "Comixo";
+    letter-spacing: .5px;
+
+}
+#projectTitle{
+    margin-left: 50px;
 }
 
-#input:focus {
-    outline: none;
+h1 {
+    margin-bottom: 0; 
+    text-align: center;
+    font-size: 32px;
+}
+
+@font-face{
+    font-family: "Comixo";
+    src: url(Comixo-Regular.otf);
 }
