@@ -1,7 +1,8 @@
 body {
+    background-color: rgb(138, 149, 138);
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #6bc3e1;
+    padding: 0;
+    width: 100%
 }
 
 .container {
@@ -53,5 +54,10 @@ body {
 }
 
 .footer {
+    padding: 15px 0;
+    background-color: rgb(186, 190, 186);
+    color:rgb(80, 84, 80);
     text-align: center;
+    font-family: "Comixo";
+    letter-spacing: 1px;
 }
