@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wick Interpreter</title>
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="style" href="styles.css">
 </head>
 <body>
 
 <header>
     <h1><center>WICK INTERPRETER</center></h1>
-    <button type="button" id="runButton">RUN</button>
+    <button type="button" id="runButton" onclick="runCode()">RUN</button>
     <h3 id="projectTitle">the happy hour</h3>
 </header>
 
@@ -21,12 +21,15 @@
         <textarea id="output" rows="20" cols="80" readonly></textarea>
     </center>
     </div>
-
 </main>
-    <script type="text/javascript" src="main.js"></script>
+
 <footer>
     <h3><center>Braden, Evan, Evelin, Lisset </center></h3>
 </footer>
 
+<script src="main.js"></script>
+<script src="server.js"></script>
+
 </body>
 </html>
+
