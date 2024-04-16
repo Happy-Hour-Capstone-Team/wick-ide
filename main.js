@@ -21,10 +21,12 @@ function runCode(){
 
 function fetchCppHeaders() {
     const headerFiles = [
+        /*
         '/wick/main.hpp',
         '/wick/main.cpp',
         '/wick/extra.cpp',
-        '/wick/extra.hpp'
+        '/wick/extra.hpp'*/
+        'wick.exe'
     ];
     const fetchPromises = headerFiles.map(file => fetch(file).then(response => response.text()));
 
