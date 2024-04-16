@@ -1,20 +1,50 @@
-function initializeIDE() {
-    document.getElementById('runButton').addEventListener('click', runningCode);
+
+function runCode(){ 
+    const userCode = document.getElementById('code-editor').value;
+
+    fetch('/execute', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ code: userCode }),
+    })
+    .then(response => response.json())
+    .then(data => {     
+        document.getElementById('output').textContent = data.output || data.error;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('output').textContent = 'Error executing code';
+    });
 }
 
-function runningCode(e) {
-    var userCode = document.getElementById('codeEditor').value;
+function fetchCppHeaders() {
+    const headerFiles = [
+        '/wick/main.hpp',
+        '/wick/main.cpp',
+        '/wick/extra.cpp',
+        '/wick/extra.hpp'
+    ];
+    const fetchPromises = headerFiles.map(file => fetch(file).then(response => response.text()));
 
-    // Display the user's code in the output area (optional)
-    document.getElementById('output').innerText = userCode;
-
-    // Execute the user's code (you may use eval() or a sandboxed environment)
-    try {
-        eval(userCode); // Note: Using eval() is generally not recommended in production due to security risks
-    } catch (error) {
-        console.error('Error executing code:', error);
-    }
+    return Promise.all(fetchPromises);
 }
 
-// Call the initializeIDE function when the page loads
-window.onload = initializeIDE;
+function executeCode(code) {
+    fetch('/execute', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ code: code }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('output').textContent = data.output || data.error;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('output').textContent = 'Error executing code';
+    });
+}
