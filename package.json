@@ -1,0 +1,15 @@
+{
+    "name": "wick-ide",
+    "version": "1.0.0",
+    "description": "online ide",
+    "type": "module",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "cors": "^2.8.5"
+    }
+  }
+  
