@@ -1,36 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wick Interpreter</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WICK INTERPRETER</title>
+    <link rel="stylesheet" href="stylesheet.css" />
+  </head>
+  <body>
+    <header>
+      <h1><center>WICK INTERPRETER</center></h1>
+      <button type="button" id="compileButton">RUN</button>
+      <h3 id="projectTitle">the happy hour</h3>
+    </header>
 
-<header>
-    <h1><center>WICK INTERPRETER</center></h1>
-    <button type="button" id="runButton" onclick="runCode()">RUN</button>
-    <h3 id="projectTitle">the happy hour</h3>
-</header>
+    <main>
+      <div class="container">
+        <div class="header">
+          <h2>Wick Interpreter</h2>
+        </div>
+        <div class="sub-header">
+          <h3>The Happy Hour</h3>
+        </div>
+        <div class="editor-container">
+          <textarea id="code-editor" rows="20" cols="80"></textarea>
+          <textarea id="output" rows="20" cols="80" readonly></textarea>
+        </div>
+      </div>
+    </main>
 
-<main>
-    <div id="editor-container"> 
-    <center>
-        <textarea id="code-editor" rows="20" cols="80"></textarea>
-        <textarea id="output" rows="20" cols="80" readonly></textarea>
-    </center>
-    </div>
-</main>
+    <footer class="footer">
+      <h3>Braden, Evan, Evelin, Lisset</h3>
+    </footer>
 
-<footer>
-    <h3><center>Braden, Evan, Evelin, Lisset </center></h3>
-</footer>
-
-<script src="main.js"></script>
-<script src="server.js"></script>
-<script src="wick.exe"></script>
-
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>
-

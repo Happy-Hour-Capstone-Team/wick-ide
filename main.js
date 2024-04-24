@@ -1,46 +1,25 @@
-function runCode() {
-    const userCode = document.getElementById('code-editor').value;
+async function runningCode() {
+  try {
+    var userCode = document.getElementById("code-editor").value;
 
-    fetch('/compile-and-run', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ code: userCode }),
-    })
-    .then(response => response.json())
-    .then(data => {     
-        document.getElementById('output').textContent = data.output || data.error;
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        document.getElementById('output').textContent = 'Error executing code';
+    const response = await fetch("/compile-and-run", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ code: userCode }),
     });
+
+    if (!response.ok) {
+      throw new Error("Failed to execute code");
+    }
+
+    const result = await response.json();
+
+    document.getElementById("output").innerText = result.output;
+  } catch (error) {
+    console.error("Error executing code:", error);
+  }
 }
 
-function fetchCppHeaders() {
-    const headerFiles = [
-        'wick.exe'
-    ];
-    const fetchPromises = headerFiles.map(file => fetch(file).then(response => response.text()));
-
-    return Promise.all(fetchPromises);
-}
-
-function executeCode(code) {
-    fetch('/compile-and-run', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ code: code }),
-    })
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById('output').textContent = data.output || data.error;
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        document.getElementById('output').textContent = 'Error executing code';
-    });
-}
+document.getElementById("compileButton").addEventListener("click", runningCode);
