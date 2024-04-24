@@ -1,8 +1,8 @@
-const express = require("express");
-const cors = require("cors");
-const { exec } = require("child_process");
-const { spawn } = require("child_process");
-const fs = require("fs").promises;
+import express from "express";
+import cors from "cors";
+import { spawn } from "child_process";
+import { promises as fs } from "fs";
+
 const app = express();
 const port = 8000;
 
@@ -12,56 +12,25 @@ app.use(cors());
 app.post("/compile-and-run", async (req, res) => {
   try {
     const { code } = req.body;
-    await fs.writeFile("temp.cpp", code);
 
-    exec("g++ temp.cpp -o tempExecutable", async (error, stdout, stderr) => {
-      if (error) {
-        res.status(500).json({ error: stderr });
-        return;
-      }
+    await fs.writeFile("test.wick", code);
 
-      const pythonProcess = spawn("python", ["script.py"]);
+    const pythonProcess = spawn("python", ["test.wick"]);
 
-      pythonProcess.stdout.on("data", (data) => {
-        console.log(`Python output: ${data}`);
-        // Save output to test.wick
-        fs.writeFile("test.wick", data);
-      });
+    let output = "";
 
-      pythonProcess.stderr.on("data", (data) => {
-        console.error(`Python error: ${data}`);
-      });
+    pythonProcess.stdout.on("data", (data) => {
+      output += data;
+      console.log(`Python output: ${data}`);
+    });
 
-      pythonProcess.on("close", (code) => {
-        console.log(`Python process exited with code ${code}`);
-        // Read the content of test.wick and send it as response
-        fs.readFile("test.wick", "utf-8", (err, content) => {
-          if (err) {
-            res.status(500).json({ error: "Error reading file" });
-          } else {
-            res.json({ output: content, error: null });
-          }
-        });
-      });
+    pythonProcess.stderr.on("data", (data) => {
+      console.error(`Python error: ${data}`);
+    });
 
-      exec("./tempExecutable", async (execError, execStdout, execStderr) => {
-        if (execError) {
-          res.status(500).json({ error: execStderr });
-          return;
-        }
-
-        // Save output to test.wick
-        await fs.writeFile("test.wick", execStdout);
-
-        // Read the content of test.wick and send it as response
-        fs.readFile("test.wick", "utf-8", (err, content) => {
-          if (err) {
-            res.status(500).json({ error: "Error reading file" });
-          } else {
-            res.json({ output: content, error: null });
-          }
-        });
-      });
+    pythonProcess.on("close", (code) => {
+      console.log(`Python process exited with code ${code}`);
+      res.json({ output: output, error: null });
     });
   } catch (err) {
     res.status(500).json({ error: "Internal server error" });
