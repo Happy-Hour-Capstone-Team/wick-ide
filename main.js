@@ -2,7 +2,7 @@ async function runningCode() {
   try {
     var userCode = document.getElementById("code-editor").value;
 
-    const response = await fetch("/compile-and-run", {
+    const response = await fetch("http://localhost:8000/compile-and-run", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -15,24 +15,25 @@ app.post("/compile-and-run", async (req, res) => {
 
     await fs.writeFile("test.wick", code);
 
-    const pythonProcess = spawn("python", ["test.wick"]);
+    const wickProcess = spawn("wick", ["test.wick"]);
 
     let output = "";
 
-    pythonProcess.stdout.on("data", (data) => {
+    wickProcess.stdout.on("data", (data) => {
       output += data;
-      console.log(`Python output: ${data}`);
+      console.log(`Wick output: ${data}`);
     });
 
-    pythonProcess.stderr.on("data", (data) => {
-      console.error(`Python error: ${data}`);
+    wickProcess.stderr.on("data", (data) => {
+      console.error(`Wick error: ${data}`);
     });
 
-    pythonProcess.on("close", (code) => {
-      console.log(`Python process exited with code ${code}`);
-      res.json({ output: output, error: null });
+    wickProcess.on("close", (code) => {
+      console.log(`Wick process exited with code ${code}`);
+      res.json({ output: output });
     });
   } catch (err) {
+    console.error("Error executing Wick code:", err);
     res.status(500).json({ error: "Internal server error" });
   }
 });
