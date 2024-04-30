@@ -1,0 +1,5 @@
+constant a = 1;
+//a = 2;
+constant b = 1;
+constant c = a * a + b * b; // Should be two. 
+print(c);
