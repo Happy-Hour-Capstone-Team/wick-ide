@@ -17,10 +17,15 @@ body {
 }
 
 main {
+
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
+
+  margin: 20px auto;
+  width: 90%; 
+
 }
 
 #inputField {
@@ -30,51 +35,75 @@ main {
   background-color: rgb(236, 238, 236);
   border-color: rgb(236, 238, 236);
   text-indent: 0;
-}
+
+  margin-left: auto;
+  margin-right: auto;
+} 
 
 #code-editor {
-  width: 80%;
+ /* width: 80%;
   height: 250px;
   margin: 15px auto 0 auto;
   background-color: rgb(236, 238, 236);
   border-color: rgb(236, 238, 236);
   text-indent: 0;
+*/
+
+
+  width: 80%;
+  height: 407px;
+  margin: 30px auto 0 auto; /* Reduced top margin to 15px  margin: 15px auto 0 auto;  */
+  background-color: rgb(236, 238, 236);
+  border-color: rgb(236, 238, 236);
+  text-indent: 0;
+
+
 }
 
 #output {
-  width: 80%;
+ /* width: 80%;
   height: 100px;
   margin: 0 auto;
   background-color: rgb(236, 238, 236);
   border-color: rgb(236, 238, 236);
+*/
+  width: 80%;
+  height: 150px;
+  margin: 0 auto; /* Removed margin */
+  background-color: rgb(236, 238, 236);
+  border-color: rgb(236, 238, 236);
+
+  margin-left: auto;
+  margin-right: auto;
 }
 
 footer {
-  position: fixed;
+  position: fixed; 
+  margin: 21px auto 0 auto;
   width: 100%;
-  padding: 25px 0;
-  background-color: rgb(131, 132, 131);
-  color: rgb(80, 84, 80);
+  padding: 20px 0;
+  background-color: rgb(186, 190, 186);
+  color:rgb(80, 84, 80);
   text-align: center;
   font-family: "Comixo";
   letter-spacing: 1px;
 }
 
-#runButton {
+
+#compileButton {
   background-color: rgb(131, 132, 131);
-  border: none;
-  color: white;
-  padding: 10px 25px;
-  text-align: center;
-  display: inline-block;
-  font-size: 15px;
-  border-radius: 0px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-family: "Comixo";
-  letter-spacing: 0.5px;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 0px;
+    position: absolute; 
+    right: 220px; 
+    top: 85px; 
+    font-family: "Comixo";
+    letter-spacing: .5px;
 }
 
 #projectTitle {
