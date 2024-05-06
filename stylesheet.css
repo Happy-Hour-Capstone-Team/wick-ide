@@ -1,127 +1,3 @@
-/*
-header {
-  background-color: rgb(186, 190, 186);
-  width: 100%;
-  padding: 3px 0;
-  margin: 0;
-  font-family: "Comixo";
-  color: rgb(80, 84, 80);
-  letter-spacing: 0.5px;
-}
-
-body {
-  background-color: rgb(138, 149, 138);
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-
-main {
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; 
-
-  margin: 20px auto;
-  width: 90%; 
-
-}
-
-#inputField {
-  width: 100%;
-  height: 600px;
-  margin: 30px auto;
-  background-color: rgb(236, 238, 236);
-  border-color: rgb(236, 238, 236);
-  text-indent: 0;
-
-  margin-left: auto;
-  margin-right: auto;
-} 
-
-#code-editor {
- /* width: 80%;
-  height: 250px;
-  margin: 15px auto 0 auto;
-  background-color: rgb(236, 238, 236);
-  border-color: rgb(236, 238, 236);
-  text-indent: 0;
-*/
-
-
-  width: 80%;
-  height: 407px;
-  margin: 30px auto 0 auto; /* Reduced top margin to 15px  margin: 15px auto 0 auto;  */
-  background-color: rgb(236, 238, 236);
-  border-color: rgb(236, 238, 236);
-  text-indent: 0;
-
-
-}
-
-#output {
- /* width: 80%;
-  height: 100px;
-  margin: 0 auto;
-  background-color: rgb(236, 238, 236);
-  border-color: rgb(236, 238, 236);
-*/
-  width: 80%;
-  height: 150px;
-  margin: 0 auto; /* Removed margin */
-  background-color: rgb(236, 238, 236);
-  border-color: rgb(236, 238, 236);
-
-  margin-left: auto;
-  margin-right: auto;
-}
-
-footer {
-  position: fixed; 
-  margin: 21px auto 0 auto;
-  width: 100%;
-  padding: 20px 0;
-  background-color: rgb(186, 190, 186);
-  color:rgb(80, 84, 80);
-  text-align: center;
-  font-family: "Comixo";
-  letter-spacing: 1px;
-}
-
-
-#compileButton {
-  background-color: rgb(131, 132, 131);
-    border: none;
-    color: white;
-    padding: 10px 25px;
-    text-align: center;
-    display: inline-block;
-    font-size: 15px;
-    border-radius: 0px;
-    position: absolute; 
-    right: 220px; 
-    top: 85px; 
-    font-family: "Comixo";
-    letter-spacing: .5px;
-}
-
-#projectTitle {
-  margin-left: 50px;
-}
-
-h1 {
-  margin-bottom: 0;
-  text-align: center;
-  font-size: 32px;
-}
-
-@font-face {
-  font-family: "Comixo";
-  src: url(Comixo-Regular.otf);
-}
-*/
-
 header {
   background-color: rgb(186, 190, 186);
   width: 100%;
@@ -144,7 +20,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   margin: 20px auto;
   width: 90%;
 }
@@ -156,43 +31,23 @@ main {
   background-color: rgb(236, 238, 236);
   border-color: rgb(236, 238, 236);
   text-indent: 0;
-
-  margin-left: auto;
-  margin-right: auto;
 }
 
 #code-editor {
-  /* width: 80%;
-  height: 250px;
-  margin: 15px auto 0 auto;
-  background-color: rgb(236, 238, 236);
-  border-color: rgb(236, 238, 236);
-  text-indent: 0;
-*/
-
   width: 80%;
   height: 407px;
-  margin: 30px auto 0 auto; /* Reduced top margin to 15px  margin: 15px auto 0 auto;  */
+  margin: 15px auto 0 auto;
   background-color: rgb(236, 238, 236);
   border-color: rgb(236, 238, 236);
   text-indent: 0;
 }
 
 #output {
-  /* width: 80%;
-  height: 100px;
+  width: 80%;
+  height: 150px;
   margin: 0 auto;
   background-color: rgb(236, 238, 236);
   border-color: rgb(236, 238, 236);
-*/
-  width: 80%;
-  height: 150px;
-  margin: 0 auto; /* Removed margin */
-  background-color: rgb(236, 238, 236);
-  border-color: rgb(236, 238, 236);
-
-  margin-left: auto;
-  margin-right: auto;
 }
 
 footer {
